@@ -13,5 +13,6 @@
     "astro": "^5.15.1",
     "lucide-astro": "^0.548.0",
     "tailwindcss": "^4.1.16"
-  }
+  },
+  "packageManager": "^pnpm@10.19.0"
 }
