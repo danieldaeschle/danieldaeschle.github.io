@@ -12,4 +12,28 @@ import Layout from "../layouts/Layout.astro";
     <Start />
     <CV />
   </div>
+
+  <script>
+    const sections = document.querySelectorAll("div[id]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+            const id = entry.target.getAttribute("id");
+            if (id) {
+              // Update URL without scrolling
+              history.replaceState(null, "", `#${id}`);
+            }
+          }
+        });
+      },
+      {
+        threshold: [0.5],
+        rootMargin: "0px",
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  </script>
 </Layout>
