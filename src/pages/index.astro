@@ -1,8 +1,15 @@
 ---
-import Welcome from "../components/Welcome.astro";
+import CV from "../components/CV.astro";
+import Start from "../components/Start.astro";
+import Navigation from "../components/Navigation.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <Welcome />
+  <Navigation />
+
+  <div class="scroll-smooth snap-y snap-mandatory overflow-y-scroll h-screen">
+    <Start />
+    <CV />
+  </div>
 </Layout>
