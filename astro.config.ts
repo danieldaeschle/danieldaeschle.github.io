@@ -7,6 +7,9 @@ import lucideAstroImportOptimizer from "./lucide.config";
 export default defineConfig({
   site: "https://danieldaeschle.github.io",
   vite: {
-    plugins: [tailwindcss(), lucideAstroImportOptimizer()],
+    plugins: [
+      tailwindcss(),
+      import.meta.env.DEV ? lucideAstroImportOptimizer() : null,
+    ].filter(Boolean),
   },
 });
