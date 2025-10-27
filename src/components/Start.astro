@@ -1,8 +1,14 @@
 ---
+import { Image } from "astro:assets";
 import { ArrowDown, Github, Linkedin } from "lucide-astro";
+
+import profileImage from "../assets/profile.jpg";
 ---
 
-<div class="snap-start snap-always relative w-full h-screen bg-gray-950" id="start">
+<div
+  class="overflow-hidden snap-start snap-always relative w-full h-screen bg-gray-950"
+  id="start"
+>
   <!-- Grid background -->
   <div
     class="absolute inset-0 opacity-4 bg-size-[60px_60px] bg-[linear-gradient(rgb(255_255_255)_1px,transparent_1px),linear-gradient(90deg,rgb(255_255_255)_1px,transparent_1px)] md:bg-size-[100px_100px]"
@@ -27,20 +33,25 @@ import { ArrowDown, Github, Linkedin } from "lucide-astro";
 
   <!-- Text content -->
   <div
-    class="absolute box-border inset-0 flex gap-12 flex-col items-center justify-center pointer-events-none m-12"
+    class="absolute box-border inset-0 flex gap-4 md:gap-12 flex-col items-center justify-center pointer-events-none mx-12 my-22"
   >
     <div
-      class="flex gap-12 pointer-events-auto flex-col md:flex-row items-center md:items-start"
+      class="flex gap-4 md:gap-12 pointer-events-auto flex-col md:flex-row items-center md:items-start"
     >
-      <img src="/profile.jpg" class="w-64 h-64 rounded-full" />
-      <div class="flex gap-6 flex-col max-w-[500px] justify-center">
+      <Image
+        src={profileImage}
+        alt="Daniel's profile picture"
+        class="size-48 md:size-64 rounded-full"
+        widths={[192, 256, 384, 512]}
+      />
+      <div class="flex gap-4 md:gap-6 flex-col max-w-[500px] justify-center">
         <h1
-          class="bg-linear-to-r from-sky-400 to-teal-500 bg-clip-text text-transparent font-extrabold text-center text-4xl md:text-left md:text-5xl"
+          class="bg-linear-to-r from-sky-400 to-teal-500 bg-clip-text text-transparent font-extrabold text-center text-3xl md:text-left md:text-5xl"
         >
           Hi, I'm Daniel!
         </h1>
         <p
-          class="text-xl leading-8 tracking-wide text-white/60 text-center md:text-left"
+          class="text-[clamp(1rem,2.5vw,1.25rem)] text-xl leading-6 md:leading-8 tracking-wide text-white/60 text-center md:text-left"
         >
           A Full Stack Developer and Software Architect mastering the entire
           digital lifecycle. Defined by an instinctive eye for design and a
